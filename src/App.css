@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.box{
+  width: 300px;
+  padding: 10px;
+   height: 30px;
+  border-radius: 10px;
+  font-size: 25px;
+}
+.inputdiv{
+ 
+  display: flex;
+  justify-content: center;
+
+  gap: 10px;
+
+}
+.button{
+  background-color: #61dafb;
+  border-radius: 10px;
+}
