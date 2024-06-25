@@ -1,40 +1,44 @@
-import React, {useState}from 'react'
-import "./App.css"
+import React, { useState } from "react";
+import "./App.css";
 function App() {
-  const arr=["mango","apple","banana","lichi"]
-  
-  const[currentItem,setCurrentitem]=useState("")
-  const[newitem,setNewItem]=useState([])
+  const [state, setState] = useState("");
+  const [add, setAdd] = useState([]);
+  const Adding = () => {
+    setAdd([...add, state]);
+  };
+  const Delete = (ind) => {
+    const deletedItem = add.filter((_, i) => i !== ind);
+    setAdd(deletedItem);
+  };
 
-  const additem=()=>{
-    setNewItem([...newitem,currentItem])
-  }
   return (
     <div className="App">
-    <h1>Shoping List </h1>
-      
-       
-       <div className='inputdiv'>
-        <input className='box' type="text" id=""  name="abc" value={currentItem} onChange={(e)=>{
-    setCurrentitem(e.target.value)
+      <h1>Shoping List </h1>
 
-        }} />
-        <button  onClick={additem}className='button'>Submit</button>
-        
-       </div>
-       {arr.map((item)=>{
-       return (<>
-        <h2>{item}</h2>
-        <button>delete</button>
-        </>
-       )
-
-       })}
-       {newitem.map((data,item)=>{
-        return<div className="abc">
-          <h2>{data}</h2><button>delete</button>
+      <div className="inputdiv">
+        <div>
+          <input
+            className="box"
+            type="text"
+            value={state}
+            onChange={(e) => {
+              setState(e.target.value);
+            }}
+          />
         </div>
-       })}
+
+        <button className="button" onClick={Adding}>
+          Add
+        </button>
+      </div>
+      {add.map((item, ind) => {
+        return (
+          <div className="dlt" key={ind}>
+            <h1>{item}</h1>
+            <button className="button2" onClick={() => Delete(ind)}>remove</button>
+          </div>
+        );
+      })}
     </div>
   );
 }
