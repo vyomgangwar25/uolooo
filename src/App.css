@@ -1,40 +1,35 @@
+*{
+  background-color: blue;
+}
 .App {
   text-align: center;
+  
 }
 
- 
-
- 
- 
- 
-
-.box{
+.box {
   width: 300px;
   padding: 10px;
-   height: 30px;
+  height: 30px;
   border-radius: 10px;
   font-size: 25px;
 }
-.inputdiv{
- 
+.inputdiv {
   display: flex;
   justify-content: center;
 
   gap: 10px;
-
 }
-.button{
+.button {
   background-color: #61dafb;
   border-radius: 10px;
   cursor: pointer;
 }
-.dlt{
- 
-    display: flex;
-    justify-content: center;
-    gap: 10px;  
+.dlt {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
-.button2{
+.button2 {
   background-color: #61dafb;
   border-radius: 10px;
   margin-top: 20px;
